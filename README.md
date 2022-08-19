@@ -10,7 +10,7 @@
   - How to recover the feedback as fast as possible between two systems?
   - How we scale?
   - How we can have resiliancy and high availability? (systems cannot lose messages)
-  - 
+ 
 - Advantages:
  - high throughput (capacity of receive and process requests): it can handle milions requests per second
  - latency is extremely low (2ms)
