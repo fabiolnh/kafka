@@ -30,3 +30,12 @@
  - Minimal recomendation for production: 3 brokers (3 nodes, 3 machines)
  - The brokers communicate with each other
  - Zookeper: it a software that helps the brokers to communicate with each other. However, Kafka is acquiring its own independency and probably it will not be used in the future
+
+## Differences between Kafka and RabbitMQ
+ - Kafka is different than RabbitMQ. RabbitMQ is Queue. Kafka is Topic
+ - A Topic can be read by a lot of systems (a lot of systems can read the same topic). A Queue deliver the message to a unique consumer (once the message is delivered, the message is gone of the queue).
+ - Kafka storages the messages (rabbitMQ works by default only with memory)
+
+## Topics
+  - A communicate channel responsible for receiving and providing sent data for the kafka
+  - 
