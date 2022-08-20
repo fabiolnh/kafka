@@ -22,3 +22,11 @@
  - Libraries for several technologies
  - Open Source tools: Kafka Connect, etc.
  - Big Companies using it. Banks Love it (a lot of transactions).
+
+## How it works and important things:
+ - Producer (Event) -> Kafka -> Brokers (Cluster Nodes) <- Consumer
+ - Each broker has a data base
+ - Kafka does not distribute messages. The Consumer is responsable for get it there.
+ - Minimal recomendation for production: 3 brokers (3 nodes, 3 machines)
+ - The brokers communicate with each other
+ - Zookeper: it a software that helps the brokers to communicate with each other. However, Kafka is acquiring its own independency and probably it will not be used in the future
