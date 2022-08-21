@@ -38,4 +38,14 @@
 
 ## Topics
   - A communicate channel responsible for receiving and providing sent data for the kafka
-  - 
+  - Message is composed by:
+  ```
+  1) Header: Metatada, not oblogated
+  2) Key: Message Type
+  3) Value: Content (json)
+  4) Timestamp
+  ```
+## Partitions
+  - A way to scale the topic. The message is proccessed faster because of the number of brokers. Each Topic can have one or more partitions to ensure the distribution and resiliency os its data. The information become more distributed. It is used to Kafka scale the topic
+  - Topic -> Partitions (each one  may be in a different broker (node))
+  - Collateral effect: how we assure the order of the messages? Two messages that has a order has to go to the same partition! To do it, we have to define the "key" of the message. Ex: Key "MoneyMovement", has a "transfer" and "cash back". Transfer has to be first than the cash back. So, to guarantee the order, we use the same key for the message. If the key is not informed, the messages will be sent to the partitions dinamically.
