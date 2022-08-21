@@ -40,7 +40,7 @@
   - A communicate channel responsible for receiving and providing sent data for the kafka
   - Message is composed by:
   ```
-  1) Header: Metatada, not oblogated
+  1) Header: Metatada, it's not mandatory
   2) Key: Message Type
   3) Value: Content (json)
   4) Timestamp
