@@ -49,3 +49,10 @@
   - A way to scale the topic. The message is proccessed faster because of the number of brokers. Each Topic can have one or more partitions to ensure the distribution and resiliency os its data. The information become more distributed. It is used to Kafka scale the topic
   - Topic -> Partitions (each one  may be in a different broker (node))
   - Collateral effect: how we assure the order of the messages? Two messages that has a order has to go to the same partition! To do it, we have to define the "key" of the message. Ex: Key "MoneyMovement", has a "transfer" and "cash back". Transfer has to be first than the cash back. So, to guarantee the order, we use the same key for the message. If the key is not informed, the messages will be sent to the partitions dinamically.
+  - Replicatior Factor: Ex: If selected 2 Replicator Factors, It will have 2 copies of each partition suming all broker. It is used to have a backup. Helo to guarantee resiliency. Usually used 2 or 3 (3 is usually for very critical systems). Ex of 2 Replication Factors:
+  ```
+  Broker 1: Partition 1, Partition 3
+  Broker 2: Partition 1, Partition 2
+  Broker 3: Partition 2, Partition 3
+  ```
+  
