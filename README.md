@@ -55,4 +55,15 @@
   Broker 2: Partition 1, Partition 2
   Broker 3: Partition 2, Partition 3
   ```
+  - Partition Leadership: The consumer will always read the topic from the partition leader.
+  - Partition Follower: When the partition leader drops, the consumer will get the information from the follower (we do not set it, kafka sets with its algoritm)
+
+## Delivery Guarantee
+  - Ack 0 (None): When we are OK that some messages cannot be delivered, we use FF (Fire and Forget) (This way is fast because we do not neet a confirmation that the message was delivered into the broker)
+  - Ack 1 (Leader): The leader saves the message and send an answer to the producer that the message was delivered (it is slower). However, if the Leader Broker lost its message (some bug), and did not sent it to the follower brokers, you receive a confirmation and you are going to think that the message was not lost
+  - Ack -1 (ALL): the producer will send the message to the leader, the leader saves, the leader replicates to the followers, the followers send a confirmation to the leader that the messages was saved and the broker leader send a confirmation to the consumer (much more slower)
   
+  Configurations:
+  - At most once: Better performance. Some messages can be lost
+  - at least once: Moderate performance. Can duplicate Messages (the worry is with the consumer that when he read some duplicated messages, he has to ignore)
+  - Exactly once: Worst performance. Exactly one time. (the kafka guarantee that wil never have a duplicated message and will not duplicate anyone)
