@@ -81,6 +81,9 @@
 
 ## Commands
   - run "docker-compose up" and go inside de bash of the kafka "docker exec -it kafka_kafka_q bash"
-  - Create a Topic: kafka-topics --create --topic=teste --bootstrap-server=localhost:9092 --partitions=3
-  - List Topics: kafka-topics --list --bootstrap-server=localhost:9092
+  - Create a Topic: "kafka-topics --create --topic=teste --bootstrap-server=localhost:9092 --partitions=3"
+  - List Topics: "kafka-topics --list --bootstrap-server=localhost:9092"
+  - Consuming a Topic: "kafka-console-consumer --bootstrap-server=localhost:9092 --topic=teste"
+  - Procude a message: "kafka-console-producer --bootstrap-server=localhost:9092 --topic=teste"
+  - Consuming all the messages, not only the new ones (remember: if there is more than one partition and the producer didn´t send the messages with a key, the messages will appear without ordering. Because they are coming from more than one partition. The only way to ensure the orther is the producer send the "Key" to all the messages go to the same partition): "kafka-console-consumer --bootstrap-server=localhost:9092 --topic=teste --from-beginning" 
   - 
