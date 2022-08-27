@@ -67,3 +67,14 @@
   - At most once: Better performance. Some messages can be lost
   - at least once: Moderate performance. Can duplicate Messages (the worry is with the consumer that when he read some duplicated messages, he has to ignore)
   - Exactly once: Worst performance. Exactly one time. (the kafka guarantee that wil never have a duplicated message and will not duplicate anyone)
+
+## Idempotent Producer
+  - a kafka configuration mode
+  - When there is a Idempotent producer, kafka can check if there is duplicated messages (caused probably for some network issues or other problem), and the kafka can discard the duplicated message, besides the kafka can guarantee the order of the messages
+
+## Consumer Groups
+  - it is for better performance
+  - Used in more than one consumer (the same software), however, working on different machines or in different proccesses
+  - when the consumers are inside a consumer group (something defined), some partitions will be used for one consumer and other partitions for another consumer
+  - when there is only one consumer (outside the consumer group or only one inside a consumer group), it will read all the partitions aleatory. There will be no separation.
+  - Inside the same group, will be one consumer per partition. If there is more consumers than partitions, the last consumers will be idle.
