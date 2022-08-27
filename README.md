@@ -78,3 +78,9 @@
   - when the consumers are inside a consumer group (something defined), some partitions will be used for one consumer and other partitions for another consumer
   - when there is only one consumer (outside the consumer group or only one inside a consumer group), it will read all the partitions aleatory. There will be no separation.
   - Inside the same group, will be one consumer per partition. If there is more consumers than partitions, the last consumers will be idle.
+
+## Commands
+  - run "docker-compose up" and go inside de bash of the kafka "docker exec -it kafka_kafka_q bash"
+  - Create a Topic: kafka-topics --create --topic=teste --bootstrap-server=localhost:9092 --partitions=3
+  - List Topics: kafka-topics --list --bootstrap-server=localhost:9092
+  - 
