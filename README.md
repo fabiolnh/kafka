@@ -73,6 +73,7 @@
   - When there is a Idempotent producer, kafka can check if there is duplicated messages (caused probably for some network issues or other problem), and the kafka can discard the duplicated message, besides the kafka can guarantee the order of the messages
 
 ## Consumer Groups
+  - defined at the consumer
   - it is for better performance
   - Used in more than one consumer (the same software), however, working on different machines or in different proccesses
   - when the consumers are inside a consumer group (something defined), some partitions will be used for one consumer and other partitions for another consumer
@@ -86,4 +87,5 @@
   - Consuming a Topic: "kafka-console-consumer --bootstrap-server=localhost:9092 --topic=teste"
   - Procude a message: "kafka-console-producer --bootstrap-server=localhost:9092 --topic=teste"
   - Consuming all the messages, not only the new ones (remember: if there is more than one partition and the producer didn´t send the messages with a key, the messages will appear without ordering. Because they are coming from more than one partition. The only way to ensure the orther is the producer send the "Key" to all the messages go to the same partition): "kafka-console-consumer --bootstrap-server=localhost:9092 --topic=teste --from-beginning" 
-  - 
+  - - Consuming a Topic in the same consumer group (if the producer send the message, only one consumer will receive each message, because each partition will be read by one consumer, and the message will go to only one partition, aleatory): "kafka-console-consumer --bootstrap-server=localhost:9092 --topic=teste -group=x"
+  
