@@ -71,6 +71,7 @@
 ## Idempotent Producer
   - a producer configuration mode
   - When there is a Idempotent producer, kafka can check if there is duplicated messages (caused probably for some network issues or other problem), and the kafka can discard the duplicated message, besides the kafka can guarantee the order of the messages
+  - if this configuration is set, the Ack configuration has to be "ALL"
 
 ## Consumer Groups
   - defined at the consumer
