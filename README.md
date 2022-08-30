@@ -69,7 +69,7 @@
   - Exactly once: Worst performance. Exactly one time. (the kafka guarantee that wil never have a duplicated message and will not duplicate anyone)
 
 ## Idempotent Producer
-  - a kafka configuration mode
+  - a producer configuration mode
   - When there is a Idempotent producer, kafka can check if there is duplicated messages (caused probably for some network issues or other problem), and the kafka can discard the duplicated message, besides the kafka can guarantee the order of the messages
 
 ## Consumer Groups
