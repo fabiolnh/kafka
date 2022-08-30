@@ -93,3 +93,4 @@
 
 ## OBS
   - For consumers and producers they have to install the library librdkafka (https://github.com/edenhill/librdkafka). It´s a C/C++ library that communicate with your own language library (there is an interface between them).
+  - Consumer and Producer params: https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
