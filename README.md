@@ -94,3 +94,32 @@
 ## OBS
   - For consumers and producers they have to install the library librdkafka (https://github.com/edenhill/librdkafka). It´s a C/C++ library that communicate with your own language library (there is an interface between them).
   - Consumer and Producer params: https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
+
+## Kafka Connect
+  - It´s a Kafka component that works as a centralized hub for simple integrations between databases, key-value stores, search indexes and file systems
+  - It´s is very simples. It does not need do develop anything.
+  - Connectors:
+    * Data Source: From where (Ex: MySQL, Mongo, SalesForce)
+    * Sink: Target (Ex: JDBC, Elasticsearch, AWS Lambda)
+  - It uses a topic between the connections
+  - While kafka there are "brokers" (a node), in kafka connect there are "workers" (nodes)
+  - Standalone Worker: (one node)
+    * Structure: (Worker(Connector(Task)))
+    * Each Worker can have more than one connector
+  - Distributed Workers: (more than one node)
+    * The workers help each other to executes the tasks. They slice the tasks
+    * The workers has to be in the same group (the same group id). It is very similar with the consumer group
+    * Structure: 
+      - Worker1(ConnectorA(Task1 - reading partition 1)
+      - Worker2(ConnectorA(Task2 - reading partition 2)
+      - Worker3(ConnectorA(Task3 - reading partition 3)
+  - Converters:
+    * The tasks use the converters to change the data format for the read and write in kafka.
+    * Ex: Avro, Protobuf (GRPC), JsonSchema, Json, String, ByteArray
+  - Dead Letter Queue (DLQ):
+    * Sometimes we get an data but it is not in the exatcly format that we want causing some error (or other error). DLQ is the local that we send the message to analyse later.
+    * property: "errors.tolerance". This configuration is only applied for conectors of type "Sink"
+      - Types:
+        * NONE: the task fails instantly. The task stops.
+        * ALL: errors are ignored and the process keeps going
+        * errors.deadletterqueue.topic.name = topic_name: is has to be "ALL". Everytime that has an error, this error goes to a topic. Inside the topic, the message wil come with some headers. And inside these headers we can see the log and the explanation for the error.
