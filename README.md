@@ -123,3 +123,4 @@
         * NONE: the task fails instantly. The task stops.
         * ALL: errors are ignored and the process keeps going
         * errors.deadletterqueue.topic.name = topic_name: is has to be "ALL". Everytime that has an error, this error goes to a topic. Inside the topic, the message wil come with some headers. And inside these headers we can see the log and the explanation for the error.
+  - Confluent Hub: https://www.confluent.io/hub/
