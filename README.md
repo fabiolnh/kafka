@@ -124,3 +124,5 @@
         * ALL: errors are ignored and the process keeps going
         * errors.deadletterqueue.topic.name = topic_name: is has to be "ALL". Everytime that has an error, this error goes to a topic. Inside the topic, the message wil come with some headers. And inside these headers we can see the log and the explanation for the error.
   - Confluent Hub: https://www.confluent.io/hub/
+  - Some documentation for connectors: https://debezium.io/documentation/reference/2.0/
+  - Kafka connect is not an ETL. If the transformation is very complex, then you have to use another solution
