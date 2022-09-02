@@ -1,4 +1,4 @@
-# Kafka
+# Kafka Study
 
 - An Open-Source distributed data stream plataform used for high performance in data pipeline, analytics stream, data integration and mission critical applications
 - The Event World: Almost everything that we do, generates an Event (order an Uber, open a car door, a purchase, a transaction, etc)
