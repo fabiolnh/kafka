@@ -127,3 +127,12 @@
   - Some documentation for connectors: https://debezium.io/documentation/reference/2.0/
   - Kafka connect is not an ETL. If the transformation is very complex, then you have to use another solution
   - Single Message Transformation (SMT): transform inbound messages after a source connection and before it is written to kafka
+
+## Other informations:
+- KsqlDB: It´s like a SQL in the Kafka. We can get data more personalized, creste relationships between tables. Beyond this, wwe can get some real time information that things that are happening in the system that is going to the kafka
+- Kafka Streams: A lib in Java that helps us to manipulate data in the kafka
+
+## Services in the clouds:
+  - It´s expensive
+  - https://www.confluent.io/confluent-cloud
+  - 
