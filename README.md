@@ -126,3 +126,4 @@
   - Confluent Hub: https://www.confluent.io/hub/
   - Some documentation for connectors: https://debezium.io/documentation/reference/2.0/
   - Kafka connect is not an ETL. If the transformation is very complex, then you have to use another solution
+  - Single Message Transformation (SMT): transform inbound messages after a source connection and before it is written to kafka
