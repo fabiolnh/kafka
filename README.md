@@ -134,5 +134,5 @@
 
 ## Services in the clouds:
   - It´s expensive
-  - https://www.confluent.io/confluent-cloud
-  - 
+  - https://www.confluent.io/confluent-cloud (The service in the confluent is more complete than the AWS MSK. Example of the services that does not have in the AWS: ksqlDB, Schema Registry)
+  - https://aws.amazon.com/pt/msk/ 
